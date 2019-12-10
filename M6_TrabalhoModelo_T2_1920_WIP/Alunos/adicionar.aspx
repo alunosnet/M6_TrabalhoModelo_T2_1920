@@ -66,7 +66,7 @@
     <form id="form1" runat="server">
         <div class="container">
             <h1>Adicionar aluno</h1>
-            <asp:FormView DefaultMode="Insert" ID="FormView1" runat="server" DataKeyNames="nprocesso" DataSourceID="SqlAlunos">
+            <asp:FormView Width="100%" DefaultMode="Insert" ID="FormView1" runat="server" DataKeyNames="nprocesso" DataSourceID="SqlAlunos">
                 <EditItemTemplate>
                     nprocesso:
                     <asp:Label Text='<%# Eval("nprocesso") %>' runat="server" ID="nprocessoLabel1" /><br />
@@ -89,23 +89,24 @@
                     <asp:LinkButton runat="server" Text="Update" CommandName="Update" ID="UpdateButton" CausesValidation="True" />&nbsp;<asp:LinkButton runat="server" Text="Cancel" CommandName="Cancel" ID="UpdateCancelButton" CausesValidation="False" />
                 </EditItemTemplate>
                 <InsertItemTemplate>
-                    nome:
-                    <asp:TextBox Text='<%# Bind("nome") %>' runat="server" ID="nomeTextBox" /><br />
-                    data_nascimento:
-                    <asp:TextBox Text='<%# Bind("data_nascimento") %>' runat="server" ID="data_nascimentoTextBox" /><br />
-                    genero:
-                    <asp:TextBox Text='<%# Bind("genero") %>' runat="server" ID="generoTextBox" /><br />
-                    morada:
-                    <asp:TextBox Text='<%# Bind("morada") %>' runat="server" ID="moradaTextBox" /><br />
-                    cp:
-                    <asp:TextBox Text='<%# Bind("cp") %>' runat="server" ID="cpTextBox" /><br />
-                    localidade:
-                    <asp:TextBox Text='<%# Bind("localidade") %>' runat="server" ID="localidadeTextBox" /><br />
-                    email:
-                    <asp:TextBox Text='<%# Bind("email") %>' runat="server" ID="emailTextBox" /><br />
-                    fotografia:
-                    <asp:TextBox Text='<%# Bind("fotografia") %>' runat="server" ID="fotografiaTextBox" /><br />
-                    <asp:LinkButton runat="server" Text="Insert" CommandName="Insert" ID="InsertButton" CausesValidation="True" />&nbsp;<asp:LinkButton runat="server" Text="Cancel" CommandName="Cancel" ID="InsertCancelButton" CausesValidation="False" />
+                    Nome:
+                    <asp:TextBox CssClass="form-control" Text='<%# Bind("nome") %>' runat="server" ID="nomeTextBox" /><br />
+                    Data nascimento:
+                    <asp:TextBox CssClass="form-control" Text='<%# Bind("data_nascimento") %>' runat="server" ID="data_nascimentoTextBox" /><br />
+                    Género:
+                    <asp:DropDownList CssClass="form-control" ID="DropDownList1" runat="server" SelectedValue='<%# Bind("genero") %>'>
+                        <asp:ListItem Value="M">Masculino</asp:ListItem>
+                        <asp:ListItem Value="F">Feminino</asp:ListItem>
+                    </asp:DropDownList><br />
+                    Morada:
+                    <asp:TextBox CssClass="form-control" Text='<%# Bind("morada") %>' runat="server" ID="moradaTextBox" /><br />
+                    Código Postal:
+                    <asp:TextBox CssClass="form-control" Text='<%# Bind("cp") %>' runat="server" ID="cpTextBox" /><br />
+                    Localidade:
+                    <asp:TextBox CssClass="form-control" Text='<%# Bind("localidade") %>' runat="server" ID="localidadeTextBox" /><br />
+                    Email:
+                    <asp:TextBox CssClass="form-control" Text='<%# Bind("email") %>' runat="server" ID="emailTextBox" /><br />
+                    <asp:LinkButton CssClass="btn btn-lg btn-danger" runat="server" Text="Insert" CommandName="Insert" ID="InsertButton" CausesValidation="True" />&nbsp;<asp:LinkButton CssClass="btn btn-lg btn-info" runat="server" Text="Cancel" CommandName="Cancel" ID="InsertCancelButton" CausesValidation="False" />
                 </InsertItemTemplate>
                 <ItemTemplate>
                     nprocesso:
