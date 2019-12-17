@@ -70,10 +70,6 @@
     <Content Include="Alunos\adicionar.aspx" />
     <Content Include="Alunos\gerir.aspx" />
     <Content Include="Alunos\pesquisar.aspx" />
-    <Content Include="App_Data\bd.mdf" />
-    <Content Include="App_Data\bd_log.ldf">
-      <DependentUpon>bd.mdf</DependentUpon>
-    </Content>
     <Content Include="Consultas\media_aluno.aspx" />
     <Content Include="Consultas\melhor_aluno.aspx" />
     <Content Include="Consultas\nr_notas_disciplina.aspx" />
@@ -82,6 +78,7 @@
     <Content Include="Disciplinas\adicionar.aspx" />
     <Content Include="Disciplinas\gerir.aspx" />
     <Content Include="Disciplinas\pesquisar.aspx" />
+    <Content Include="Erros.aspx" />
     <Content Include="Global.asax" />
     <Content Include="index.aspx" />
     <Content Include="Js\bootstrap.min.js" />
@@ -157,6 +154,13 @@
     <Compile Include="Disciplinas\pesquisar.aspx.designer.cs">
       <DependentUpon>pesquisar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Erros.aspx.cs">
+      <DependentUpon>Erros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Erros.aspx.designer.cs">
+      <DependentUpon>Erros.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -200,6 +204,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Imagens\" />
     <Folder Include="Models\" />
   </ItemGroup>

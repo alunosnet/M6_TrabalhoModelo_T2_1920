@@ -65,6 +65,28 @@
     <!--Menu-->
     <form id="form1" runat="server">
         <div class="container">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="nr_nota" DataSourceID="SqlNotas" AllowPaging="True" AllowSorting="True">
+                <Columns>
+                    <asp:CommandField ShowEditButton="True" ShowDeleteButton="True"></asp:CommandField>
+                    <asp:BoundField DataField="nr_nota" HeaderText="nr_nota" ReadOnly="True" InsertVisible="False" SortExpression="nr_nota"></asp:BoundField>
+                    <asp:BoundField DataField="nprocesso" HeaderText="nprocesso" SortExpression="nprocesso" ReadOnly="True"></asp:BoundField>
+                    <asp:BoundField DataField="codigo_disciplina" HeaderText="Disciplina" SortExpression="codigo_disciplina" ReadOnly="True"></asp:BoundField>
+                    <asp:BoundField DataField="data_nota" DataFormatString="{0:dd-MM-yyyy}" HeaderText="data_nota" SortExpression="data_nota"></asp:BoundField>
+                    <asp:BoundField DataField="nr_modulo" HeaderText="Nº módulo" SortExpression="nr_modulo"></asp:BoundField>
+                    <asp:BoundField DataField="nota" HeaderText="Nota" SortExpression="nota"></asp:BoundField>
+                </Columns>
+            </asp:GridView>
+            <asp:SqlDataSource runat="server" ID="SqlNotas" ConnectionString='<%$ ConnectionStrings:ConnectionStringTrabalhoModelo %>' DeleteCommand="delete from notas where nr_nota=@nr_nota" SelectCommand="select * from notas" UpdateCommand="UPDATE notas SET data_nota = @data_nota, nr_modulo = @nr_modulo, nota = @nota WHERE (nr_nota = @nr_nota)">
+                <DeleteParameters>
+                    <asp:Parameter Name="nr_nota"></asp:Parameter>
+                </DeleteParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="data_nota"></asp:Parameter>
+                    <asp:Parameter Name="nr_modulo"></asp:Parameter>
+                    <asp:Parameter Name="nota"></asp:Parameter>
+                    <asp:Parameter Name="nr_nota"></asp:Parameter>
+                </UpdateParameters>
+            </asp:SqlDataSource>
         </div>
     </form>
     <script src="/Js/jquery-3.3.1.slim.min.js"></script>

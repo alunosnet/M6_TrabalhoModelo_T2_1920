@@ -1,4 +1,4 @@
-TODO: gerir notas, pesquisar por aluno, imagem nos alunos, consultas, home page, página de erros personalizada, formato das datas sem horas
+TODO: imagem nos alunos (adicionar e gerir/pesquisar), consultas, home page, 
 
 create table alunos(
 	nprocesso int identity primary key,

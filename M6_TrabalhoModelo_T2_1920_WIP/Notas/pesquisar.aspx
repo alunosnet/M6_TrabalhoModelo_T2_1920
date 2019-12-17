@@ -65,6 +65,21 @@
     <!--Menu-->
     <form id="form1" runat="server">
         <div class="container">
+            Aluno:<asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlAlunos" DataTextField="nome" DataValueField="nprocesso" AutoPostBack="True"></asp:DropDownList>
+            <asp:SqlDataSource runat="server" ID="SqlAlunos" ConnectionString='<%$ ConnectionStrings:ConnectionStringTrabalhoModelo %>' SelectCommand="SELECT [nprocesso], [nome] FROM [alunos] ORDER BY [nome]"></asp:SqlDataSource>
+            <asp:GridView EmptyDataText="Não tem dados." ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlNotas">
+                <Columns>
+                    <asp:BoundField DataField="data_nota" DataFormatString="{0:dd-MM-yyyy}" HeaderText="data_nota" SortExpression="data_nota"></asp:BoundField>
+                    <asp:BoundField DataField="nr_modulo" HeaderText="nr_modulo" SortExpression="nr_modulo"></asp:BoundField>
+                    <asp:BoundField DataField="nota" HeaderText="nota" SortExpression="nota"></asp:BoundField>
+                    <asp:BoundField DataField="nome" HeaderText="nome" SortExpression="nome"></asp:BoundField>
+                </Columns>
+            </asp:GridView>
+            <asp:SqlDataSource runat="server" ID="SqlNotas" ConnectionString='<%$ ConnectionStrings:ConnectionStringTrabalhoModelo %>' SelectCommand="SELECT notas.data_nota, notas.nr_modulo, notas.nota, disciplinas.nome FROM notas INNER JOIN disciplinas ON notas.codigo_disciplina = disciplinas.codigo WHERE (notas.nprocesso = @nprocesso) ORDER BY notas.codigo_disciplina">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="DropDownList1" PropertyName="SelectedValue" Name="nprocesso" Type="Int32"></asp:ControlParameter>
+                </SelectParameters>
+            </asp:SqlDataSource>
         </div>
     </form>
     <script src="/Js/jquery-3.3.1.slim.min.js"></script>
