@@ -65,7 +65,7 @@
     <!--Menu-->
     <form id="form1" runat="server">
         <div class="container">
-            Aluno:<asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlAlunos" DataTextField="nome" DataValueField="nprocesso" AutoPostBack="True"></asp:DropDownList>
+            Aluno:<asp:DropDownList CssClass="form-control" ID="DropDownList1" runat="server" DataSourceID="SqlAlunos" DataTextField="nome" DataValueField="nprocesso" AutoPostBack="True"></asp:DropDownList>
             <asp:SqlDataSource runat="server" ID="SqlAlunos" ConnectionString='<%$ ConnectionStrings:ConnectionStringTrabalhoModelo %>' SelectCommand="SELECT [nprocesso], [nome] FROM [alunos] ORDER BY [nome]"></asp:SqlDataSource>
             <asp:GridView EmptyDataText="Não tem dados." ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlNotas">
                 <Columns>

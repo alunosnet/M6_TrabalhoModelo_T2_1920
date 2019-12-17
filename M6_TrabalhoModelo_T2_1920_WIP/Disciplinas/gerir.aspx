@@ -65,13 +65,13 @@
     <!--Menu-->
     <form id="form1" runat="server">
         <div class="container">
-            <asp:GridView runat="server" ID="gv1" AutoGenerateColumns="False" DataKeyNames="codigo" DataSourceID="SqlDisciplinas" AllowPaging="True" AllowSorting="True">
+            <asp:GridView CssClass="table" runat="server" ID="gv1" AutoGenerateColumns="False" DataKeyNames="codigo" DataSourceID="SqlDisciplinas" AllowPaging="True" AllowSorting="True">
                 <Columns>
                     <asp:CommandField ShowEditButton="True" ShowDeleteButton="True"></asp:CommandField>
                     <asp:BoundField DataField="codigo" HeaderText="codigo" ReadOnly="True" InsertVisible="False" SortExpression="codigo"></asp:BoundField>
-                    <asp:BoundField DataField="nome" HeaderText="nome" SortExpression="nome"></asp:BoundField>
-                    <asp:BoundField DataField="nr_modulos" HeaderText="nr_modulos" SortExpression="nr_modulos"></asp:BoundField>
-                    <asp:BoundField DataField="ano_escolaridade" HeaderText="ano_escolaridade" SortExpression="ano_escolaridade"></asp:BoundField>
+                    <asp:BoundField ControlStyle-CssClass="form-control" DataField="nome" HeaderText="nome" SortExpression="nome"></asp:BoundField>
+                    <asp:BoundField ControlStyle-CssClass="form-control" DataField="nr_modulos" HeaderText="nr_modulos" SortExpression="nr_modulos"></asp:BoundField>
+                    <asp:BoundField ControlStyle-CssClass="form-control" DataField="ano_escolaridade" HeaderText="ano_escolaridade" SortExpression="ano_escolaridade"></asp:BoundField>
                 </Columns>
             </asp:GridView>
             <asp:SqlDataSource runat="server" ID="SqlDisciplinas" ConnectionString='<%$ ConnectionStrings:ConnectionStringTrabalhoModelo %>' DeleteCommand="delete from disciplinas WHERE codigo=@codigo" SelectCommand="select * from disciplinas" UpdateCommand="UPDATE disciplinas SET nome = @nome, nr_modulos = @nr_modulos, ano_escolaridade = @ano_escolaridade WHERE (codigo = @codigo)">

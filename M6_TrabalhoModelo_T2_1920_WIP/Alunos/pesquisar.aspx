@@ -65,7 +65,7 @@
     <!--Menu-->
     <form id="form1" runat="server">
         <div class="container">
-            Nome: <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox><asp:Button ID="Button1" runat="server" Text="Pesquisar" />
+            Nome: <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server"></asp:TextBox><asp:Button CssClass="btn btn-lg btn-info" ID="Button1" runat="server" Text="Pesquisar" />
             <asp:GridView CssClass="table" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="nprocesso" DataSourceID="SqlAlunos">
                 <Columns>
                     <asp:BoundField DataField="nprocesso" HeaderText="nprocesso" ReadOnly="True" InsertVisible="False" SortExpression="nprocesso"></asp:BoundField>

@@ -65,17 +65,22 @@
     <!--Menu-->
     <form id="form1" runat="server">
         <div class="container">
-            <asp:GridView CssClass="table" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="nprocesso" DataSourceID="SqlAlunos" AllowSorting="True" AllowPaging="True">
+            <asp:GridView OnRowDataBound="GridView1_RowDataBound"  CssClass="table" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="nprocesso" DataSourceID="SqlAlunos" AllowSorting="True" AllowPaging="True">
                 <Columns>
                     <asp:CommandField ShowDeleteButton="True" ShowEditButton="True"></asp:CommandField>
-                    <asp:BoundField DataField="nprocesso" HeaderText="nprocesso" ReadOnly="True" InsertVisible="False" SortExpression="nprocesso"></asp:BoundField>
-                    <asp:BoundField DataField="nome" HeaderText="nome" SortExpression="nome"></asp:BoundField>
-                    <asp:BoundField DataField="data_nascimento" HeaderText="data_nascimento" SortExpression="data_nascimento"></asp:BoundField>
-                    <asp:BoundField DataField="genero" HeaderText="genero" SortExpression="genero"></asp:BoundField>
-                    <asp:BoundField DataField="morada" HeaderText="morada" SortExpression="morada"></asp:BoundField>
-                    <asp:BoundField DataField="cp" HeaderText="cp" SortExpression="cp"></asp:BoundField>
-                    <asp:BoundField DataField="localidade" HeaderText="localidade" SortExpression="localidade"></asp:BoundField>
-                    <asp:BoundField DataField="email" HeaderText="email" SortExpression="email"></asp:BoundField>
+                    <asp:BoundField ControlStyle-CssClass="form-control" DataField="nprocesso" HeaderText="nprocesso" ReadOnly="True" InsertVisible="False" SortExpression="nprocesso"></asp:BoundField>
+                    <asp:BoundField ControlStyle-CssClass="form-control" DataField="nome" HeaderText="nome" SortExpression="nome"></asp:BoundField>
+                    <asp:BoundField ControlStyle-CssClass="form-control" DataField="data_nascimento" DataFormatString="{0:dd-MM-yyyy}" HeaderText="data_nascimento" SortExpression="data_nascimento"></asp:BoundField>
+                    <asp:BoundField ControlStyle-CssClass="form-control" DataField="genero" HeaderText="genero" SortExpression="genero"></asp:BoundField>
+                    <asp:BoundField ControlStyle-CssClass="form-control" DataField="morada" HeaderText="morada" SortExpression="morada"></asp:BoundField>
+                    <asp:BoundField ControlStyle-CssClass="form-control" DataField="cp" HeaderText="cp" SortExpression="cp"></asp:BoundField>
+                    <asp:BoundField ControlStyle-CssClass="form-control" DataField="localidade" HeaderText="localidade" SortExpression="localidade"></asp:BoundField>
+                    <asp:BoundField ControlStyle-CssClass="form-control" DataField="email" HeaderText="email" SortExpression="email"></asp:BoundField>
+       <asp:TemplateField HeaderText="Image">
+                        <ItemTemplate>
+                            <asp:Image ID="fotografia" Width="160px" runat="server" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
                 </Columns>
             </asp:GridView>
             <asp:SqlDataSource runat="server" ID="SqlAlunos" ConnectionString='<%$ ConnectionStrings:ConnectionStringTrabalhoModelo %>' DeleteCommand="DELETE FROM alunos WHERE (nprocesso = @nprocesso)" SelectCommand="select * from alunos" UpdateCommand="UPDATE alunos SET nome = @nome, data_nascimento = @data_nascimento, genero = @genero, morada = @morada, cp = @cp, localidade = @localidade, email = @email WHERE (nprocesso = @nprocesso)">

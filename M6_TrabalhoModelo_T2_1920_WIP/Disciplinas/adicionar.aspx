@@ -79,12 +79,12 @@
                 </EditItemTemplate>
                 <InsertItemTemplate>
                     nome:
-                    <asp:TextBox Text='<%# Bind("nome") %>' runat="server" ID="nomeTextBox" /><br />
+                    <asp:TextBox CssClass="form-control" Text='<%# Bind("nome") %>' runat="server" ID="nomeTextBox" /><br />
                     nr_modulos:
-                    <asp:TextBox Text='<%# Bind("nr_modulos") %>' runat="server" ID="nr_modulosTextBox" /><br />
+                    <asp:TextBox  CssClass="form-control" Text='<%# Bind("nr_modulos") %>' runat="server" ID="nr_modulosTextBox" /><br />
                     ano_escolaridade:
-                    <asp:TextBox Text='<%# Bind("ano_escolaridade") %>' runat="server" ID="ano_escolaridadeTextBox" /><br />
-                    <asp:LinkButton runat="server" Text="Insert" CommandName="Insert" ID="InsertButton" CausesValidation="True" />&nbsp;<asp:LinkButton runat="server" Text="Cancel" CommandName="Cancel" ID="InsertCancelButton" CausesValidation="False" />
+                    <asp:TextBox  CssClass="form-control" Text='<%# Bind("ano_escolaridade") %>' runat="server" ID="ano_escolaridadeTextBox" /><br />
+                    <asp:LinkButton CssClass="btn btn-lg btn-danger" runat="server" Text="Insert" CommandName="Insert" ID="InsertButton" CausesValidation="True" />&nbsp;<asp:LinkButton CssClass="btn btn-lg btn-danger" runat="server" Text="Cancel" CommandName="Cancel" ID="InsertCancelButton" CausesValidation="False" />
                 </InsertItemTemplate>
                 <ItemTemplate>
                     codigo:

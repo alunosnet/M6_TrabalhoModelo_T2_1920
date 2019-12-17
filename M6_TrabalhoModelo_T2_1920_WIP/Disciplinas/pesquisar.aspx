@@ -65,7 +65,7 @@
     <!--Menu-->
     <form id="form1" runat="server">
         <div class="container">
-            Nome <asp:TextBox runat="server" ID="TextBox1" /><asp:Button runat="server" ID="BT1" Text="Pesquisar" />
+            Nome <asp:TextBox CssClass="form-control" runat="server" ID="TextBox1" /><asp:Button CssClass="btn btn-lg btn-info" runat="server" ID="BT1" Text="Pesquisar" />
             <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDisciplinas" DataKeyNames="codigo">
                 <AlternatingItemTemplate>
                     <tr style="">
