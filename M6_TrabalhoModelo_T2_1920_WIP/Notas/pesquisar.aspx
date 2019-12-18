@@ -67,7 +67,7 @@
         <div class="container">
             Aluno:<asp:DropDownList CssClass="form-control" ID="DropDownList1" runat="server" DataSourceID="SqlAlunos" DataTextField="nome" DataValueField="nprocesso" AutoPostBack="True"></asp:DropDownList>
             <asp:SqlDataSource runat="server" ID="SqlAlunos" ConnectionString='<%$ ConnectionStrings:ConnectionStringTrabalhoModelo %>' SelectCommand="SELECT [nprocesso], [nome] FROM [alunos] ORDER BY [nome]"></asp:SqlDataSource>
-            <asp:GridView EmptyDataText="Não tem dados." ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlNotas">
+            <asp:GridView CssClass="table" EmptyDataText="Não tem dados." ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlNotas">
                 <Columns>
                     <asp:BoundField DataField="data_nota" DataFormatString="{0:dd-MM-yyyy}" HeaderText="data_nota" SortExpression="data_nota"></asp:BoundField>
                     <asp:BoundField DataField="nr_modulo" HeaderText="nr_modulo" SortExpression="nr_modulo"></asp:BoundField>

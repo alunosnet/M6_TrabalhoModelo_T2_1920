@@ -130,10 +130,10 @@
                     </tr>
                 </ItemTemplate>
                 <LayoutTemplate>
-                    <table runat="server">
+                    <table class="table" runat="server">
                         <tr runat="server">
                             <td runat="server">
-                                <table runat="server" id="itemPlaceholderContainer" style="" border="0">
+                                <table class="table" runat="server" id="itemPlaceholderContainer" style="" border="0">
                                     <tr runat="server" style="">
                                         <th runat="server">codigo</th>
                                         <th runat="server">nome</th>

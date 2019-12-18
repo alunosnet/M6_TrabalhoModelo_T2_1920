@@ -65,7 +65,7 @@
     <!--Menu-->
     <form id="form1" runat="server">
         <div class="container">
-            <asp:FormView DefaultMode="Insert" ID="FormView1" runat="server" DataKeyNames="nr_nota" DataSourceID="SqlNotas">
+            <asp:FormView Width="100%" DefaultMode="Insert" ID="FormView1" runat="server" DataKeyNames="nr_nota" DataSourceID="SqlNotas">
                 <EditItemTemplate>
                     nr_nota:
                     <asp:Label Text='<%# Eval("nr_nota") %>' runat="server" ID="nr_notaLabel1" /><br />
@@ -82,19 +82,19 @@
                     <asp:LinkButton runat="server" Text="Update" CommandName="Update" ID="UpdateButton" CausesValidation="True" />&nbsp;<asp:LinkButton runat="server" Text="Cancel" CommandName="Cancel" ID="UpdateCancelButton" CausesValidation="False" />
                 </EditItemTemplate>
                 <InsertItemTemplate>
-                    nprocesso:
+                    Aluno:
                     <asp:DropDownList CssClass="form-control" ID="DropDownList1" runat="server" SelectedValue='<%# Bind("nprocesso") %>' DataSourceID="SqlAlunos" DataTextField="nome" DataValueField="nprocesso"></asp:DropDownList>
-                    codigo_disciplina:
+                    Disciplina:
                     <asp:SqlDataSource runat="server" ID="SqlAlunos" ConnectionString='<%$ ConnectionStrings:ConnectionStringTrabalhoModelo %>' SelectCommand="SELECT [nprocesso], [nome] FROM [alunos] ORDER BY [nome]"></asp:SqlDataSource>
                     <asp:DropDownList CssClass="form-control" ID="DropDownList2" runat="server" DataSourceID="SqlDisciplinas" DataTextField="nome" DataValueField="codigo" SelectedValue='<%# Bind("codigo_disciplina") %>'></asp:DropDownList>
-                    data_nota:
+                    Data nota:
                     <asp:SqlDataSource runat="server" ID="SqlDisciplinas" ConnectionString='<%$ ConnectionStrings:ConnectionStringTrabalhoModelo %>' SelectCommand="SELECT [codigo], [nome] FROM [disciplinas] ORDER BY [nome]"></asp:SqlDataSource>
                     <asp:TextBox CssClass="form-control" Text='<%# Bind("data_nota") %>' runat="server" ID="data_notaTextBox" /><br />
-                    nr_modulo:
+                    Nº módulo:
                     <asp:TextBox CssClass="form-control" Text='<%# Bind("nr_modulo") %>' runat="server" ID="nr_moduloTextBox" /><br />
-                    nota:
+                    Nota:
                     <asp:TextBox CssClass="form-control" Text='<%# Bind("nota") %>' runat="server" ID="notaTextBox" /><br />
-                    <asp:LinkButton runat="server" Text="Insert" CommandName="Insert" ID="InsertButton" CausesValidation="True" />&nbsp;<asp:LinkButton runat="server" Text="Cancel" CommandName="Cancel" ID="InsertCancelButton" CausesValidation="False" />
+                    <asp:LinkButton CssClass="btn btn-lg btn-danger" runat="server" Text="Insert" CommandName="Insert" ID="InsertButton" CausesValidation="True" />&nbsp;<asp:LinkButton CssClass="btn btn-lg btn-info" runat="server" Text="Cancel" CommandName="Cancel" ID="InsertCancelButton" CausesValidation="False" />
                 </InsertItemTemplate>
                 <ItemTemplate>
                     nr_nota:
